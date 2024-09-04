@@ -69,7 +69,7 @@ y_test_pred = svm_rbf.decision_function(x_test)
 
 # Prédire les étiquettes pour l'ensemble de test
 #y_pred_syn = bagging_clf.predict(x_test_syn)
-accuracy_syn = accuracy_score(y_test_syn, y_pred_syn)
+#accuracy_syn = accuracy_score(y_test_syn, y_pred_syn)
 
 # Visualiser les résultats
 # Assure-toi que x_syn est bien un tableau 2D (n_samples, n_features)

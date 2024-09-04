@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-#from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
 from sklearn import metrics
@@ -23,8 +23,8 @@ mean_values = df.mean()
 # Remplissage des valeurs NaN par la moyenne de chaque colonne
 df.fillna(mean_values, inplace=True)
 
-#encoder = LabelEncoder()
-#df['label'] = encoder.fit_transform(df['label'])
+encoder = LabelEncoder()
+df['label'] = encoder.fit_transform(df['label'])
 
 y = df['label']
 x = df.drop('label', axis=1)

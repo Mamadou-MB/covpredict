@@ -65,7 +65,7 @@ x_train_syn, x_test_syn, y_train_syn, y_test_syn = train_test_split(x_syn, y_syn
 
 # Créer un classificateur de bagging avec des arbres de décision
 #bagging_clf = BaggingClassifier(base_estimator=base_clf, n_estimators=50, random_state=42)
-"bagging_clf.fit(x_train_syn, y_train_syn)
+#bagging_clf.fit(x_train_syn, y_train_syn)
 
 # Prédire les étiquettes pour l'ensemble de test
 #y_pred_syn = bagging_clf.predict(x_test_syn)

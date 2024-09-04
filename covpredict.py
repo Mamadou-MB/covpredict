@@ -49,8 +49,8 @@ y_test_pred = svm_rbf.decision_function(x_test)
 # =============================================================================================================================================
 
 # Construire la courbe ROC
-fpr, tpr, _ = metrics.roc_curve(y_test, prediction)
-auc = metrics.auc(fpr, tpr)
+#fpr, tpr, _ = metrics.roc_curve(y_test, prediction)
+#auc = metrics.auc(fpr, tpr)
 
 # =============================================================================================================================================
 

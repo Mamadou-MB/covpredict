@@ -1,7 +1,0 @@
-pip==23.2
-numpy==1.23.2
-pandas==1.4.3
-streamlit 
-scikit-learn==1.1.2
-matplotlib==3.5.3
-distutils

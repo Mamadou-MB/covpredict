@@ -3,14 +3,11 @@ import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from sklearn.model_selection import train_test_split
 from sklearn.svm import SVC
-from sklearn import metrics
 import matplotlib.pyplot as plt
-from sklearn.ensemble import BaggingClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.datasets import make_classification
-from sklearn.metrics import accuracy_score
+#from sklearn.ensemble import BaggingClassifier
+#from sklearn.tree import DecisionTreeClassifier
 import streamlit as st
-from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.metrics import classification_report, confusion_matrix,accuracy_score
 import streamlit.components.v1 as components
 
 # =============================================================================================================================================
@@ -58,20 +55,20 @@ auc = metrics.auc(fpr, tpr)
 # =============================================================================================================================================
 
 # Générer des données synthétiques
-x_syn, y_syn = make_classification(n_samples=100, n_features=2, n_informative=2, n_redundant=0, random_state=42)
+#x_syn, y_syn = make_classification(n_samples=100, n_features=2, n_informative=2, n_redundant=0, random_state=42)
 
 # Diviser les données en ensembles d'entraînement et de test
 x_train_syn, x_test_syn, y_train_syn, y_test_syn = train_test_split(x_syn, y_syn, test_size=0.2, random_state=42)
 
 # Créer un classificateur d'arbre de décision
-base_clf = DecisionTreeClassifier()
+#base_clf = DecisionTreeClassifier()
 
 # Créer un classificateur de bagging avec des arbres de décision
-bagging_clf = BaggingClassifier(base_estimator=base_clf, n_estimators=50, random_state=42)
-bagging_clf.fit(x_train_syn, y_train_syn)
+#bagging_clf = BaggingClassifier(base_estimator=base_clf, n_estimators=50, random_state=42)
+"bagging_clf.fit(x_train_syn, y_train_syn)
 
 # Prédire les étiquettes pour l'ensemble de test
-y_pred_syn = bagging_clf.predict(x_test_syn)
+#y_pred_syn = bagging_clf.predict(x_test_syn)
 accuracy_syn = accuracy_score(y_test_syn, y_pred_syn)
 
 # Visualiser les résultats

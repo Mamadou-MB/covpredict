@@ -55,7 +55,8 @@ y_test_pred = svm_rbf.decision_function(x_test)
 # =============================================================================================================================================
 
 # Générer des données synthétiques
- x_syn, y_syn = make_classification(n_samples=100, n_features=2, n_informative=2, n_redundant=0, random_state=42)
+
+x_syn, y_syn = make_classification(n_samples=100, n_features=2, n_informative=2, n_redundant=0, random_state=42)
 
 # Diviser les données en ensembles d'entraînement et de test
 #x_train_syn, x_test_syn, y_train_syn, y_test_syn = train_test_split(x_syn, y_syn, test_size=0.2, random_state=42)

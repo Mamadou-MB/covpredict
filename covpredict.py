@@ -47,28 +47,6 @@ y_test_pred = svm_rbf.decision_function(x_test)
 # =============================================================================================================================================
 
 
-# Visualiser les résultats
-# Assure-toi que x_syn est bien un tableau 2D (n_samples, n_features)
-if x_syn.ndim == 2:
-    x_min, x_max = x_syn[:, 0].min() - 1, x_syn[:, 0].max() + 1
-    y_min, y_max = x_syn[:, 1].min() - 1, x_syn[:, 1].max() + 1
-    xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.01), np.arange(y_min, y_max, 0.01))
-    Z = bagging_clf.predict(np.c_[xx.ravel(), yy.ravel()])
-    Z = Z.reshape(xx.shape)
-
-    plt.contourf(xx, yy, Z, alpha=0.8, cmap=plt.cm.coolwarm)
-    plt.scatter(x_train_syn[:, 0], x_train_syn[:, 1], c=y_train_syn, marker='o', edgecolors='k', label='Train')
-    plt.scatter(x_test_syn[:, 0], x_test_syn[:, 1], c=y_test_syn, marker='s', edgecolors='k', label='Test')
-    plt.xlabel('x_train')
-    plt.ylabel('y_train')
-    plt.title('Bagging Decision Boundary')
-    plt.legend()
-    plt.show()
-else:
-    st.write("Les données synthétiques générées ne sont pas au bon format pour la visualisation 2D.")
-
-# =============================================================================================================================================
-
 # Titre du tableau de bord
 st.header(":green[Présentation des données interactives Covid-19 avec prédiction]")
 st.markdown("""
